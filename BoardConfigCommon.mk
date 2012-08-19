@@ -11,6 +11,9 @@ TARGET_CPU_VARIANT := cortex-a9
 TARGET_CPU_SMP := true
 TARGET_ARCH_LOWMEM := true
 
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+
 # Audio
 COMMON_GLOBAL_CFLAGS += -DMR0_AUDIO_BLOB
 
