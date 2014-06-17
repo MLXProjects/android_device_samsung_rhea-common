@@ -14,6 +14,10 @@ PRODUCT_PACKAGES += \
     init.bt.rc \
     lpm.rc
 
+# Fstrim cron job
+PRODUCT_COPY_FILES += \
+    device/samsung/rhea-common/init.d/69fstrim_crond:system/etc/init.d/69fstrim_crond
+
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
     device/samsung/rhea-common/keylayouts/bcm_headset.kl:system/usr/keylayout/bcm_headset.kl \
