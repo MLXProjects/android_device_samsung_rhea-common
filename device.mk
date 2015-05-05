@@ -36,6 +36,11 @@ PRODUCT_COPY_FILES += \
         device/samsung/corsica/configs/etc/media_codecs.xml:system/etc/media_codecs.xml \
         device/samsung/corsica/configs/etc/media_profiles.xml:system/etc/media_profiles.xml
 
+
+# Multisim-toggle app © Shubhang Rathore
+PRODUCT_COPY_FILES += \
+        device/samsung/corsica/multisim/MultiSIM-Toggle.apk:system/app/MultiSIM-Toggle.apk
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
 	setup_fs
