@@ -22,6 +22,10 @@ video.enc.h264.timing_thr2=145
 
 sf.metadata_use_plat_sw_codecs=1
 
+# Media
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
+
 # MultiTouch support
 ro.product.multi_touch_enabled=true
 ro.product.max_num_touch=2
