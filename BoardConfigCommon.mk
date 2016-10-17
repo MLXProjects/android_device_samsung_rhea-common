@@ -39,6 +39,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # Camera
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
 # CFLAGS     
 BOARD_GLOBAL_CFLAGS += -DMR0_AUDIO_BLOB -DBOARD_CANT_REALLOCATE_OMX_BUFFERS
@@ -173,9 +174,6 @@ BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ $(COMMON_PATH)/cmhw/
 # ART
 # jemalloc causes a lot of random crash on free()
 MALLOC_SVELTE := true
-
-# Some of our vendor libs have text relocations (most of OMX libs)
-TARGET_NEEDS_TEXT_RELOCATIONS := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
