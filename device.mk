@@ -44,6 +44,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
         device/samsung/corsica/multisim/MultiSIM-Toggle.apk:system/app/MultiSIM-Toggle.apk
 
+# Audio Configuration
+PRODUCT_PROPERTY_OVERRIDES += \
+        persist.audio.handset.mic.type=digital \
+        persist.audio.dualmic.config=endfire \
+        persist.audio.fluence.voicecall=true \
+        persist.audio.fluence.voicerec=false \
+        persist.audio.fluence.speaker=false \
+        af.resampler.quality=4
+
 # Stagefright
 PRODUCT_PROPERTY_OVERRIDES += \
         media.stagefright.enable-player=true \
