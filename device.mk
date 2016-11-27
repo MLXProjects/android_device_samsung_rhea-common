@@ -14,22 +14,27 @@ PRODUCT_AAPT_PREF_CONFIG := ldpi
 
 # Init files
 PRODUCT_COPY_FILES += \
-	device/samsung/corsica/init.rhea_ss_corsica.rc:root/init.rhea_ss_corsica.rc \
-	device/samsung/corsica/init.bcm2165x.usb.rc:root/init.bcm2165x.usb.rc \
-	device/samsung/corsica/init.log.rc:root/init.log.rc \
-	device/samsung/corsica/init.bt.rc:root/init.bt.rc \
-	device/samsung/corsica/lpm.rc:root/lpm.rc \
-	device/samsung/corsica/ueventd.rhea_ss_corsica.rc:root/ueventd.rhea_ss_corsica.rc \
-        device/samsung/corsica/init.recovery.rhea_ss_corsica.rc:root/init.recovery.rhea_ss_corsica.rc \
-	device/samsung/corsica/fstab.rhea_ss_corsica:root/fstab.rhea_ss_corsica 
+	device/samsung/corsica/rootdir/etc/init.rhea_ss_corsica.rc:root/init.rhea_ss_corsica.rc \
+	device/samsung/corsica/rootdir/etc/init.bcm2165x.usb.rc:root/init.bcm2165x.usb.rc \
+	device/samsung/corsica/rootdir/etc/init.log.rc:root/init.log.rc \
+	device/samsung/corsica/rootdir/etc/init.bt.rc:root/init.bt.rc \
+	device/samsung/corsica/rootdir/etc/lpm.rc:root/lpm.rc \
+	device/samsung/corsica/rootdir/etc/ueventd.rhea_ss_corsica.rc:root/ueventd.rhea_ss_corsica.rc \
+        device/samsung/corsica/rootdir/etc/init.recovery.rhea_ss_corsica.rc:root/init.recovery.rhea_ss_corsica.rc \
+	device/samsung/corsica/rootdir/etc/fstab.rhea_ss_corsica:root/fstab.rhea_ss_corsica 
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
-	device/samsung/corsica/bcm_headset.kl:system/usr/keylayout/bcm_headset.kl \
-	device/samsung/corsica/bcm_keypad_v2.kl:system/usr/keylayout/bcm_keypad_v2.kl \
-	device/samsung/corsica/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-	device/samsung/corsica/Generic.kl:system/usr/keylayout/Generic.kl \
-	device/samsung/corsica/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl 
+	device/samsung/corsica/keylayouts/bcm_headset.kl:system/usr/keylayout/bcm_headset.kl \
+	device/samsung/corsica/keylayouts/bcm_keypad_v2.kl:system/usr/keylayout/bcm_keypad_v2.kl \
+	device/samsung/corsica/keylayouts/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+	device/samsung/corsica/keylayouts/Generic.kl:system/usr/keylayout/Generic.kl \
+	device/samsung/corsica/keylayouts/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl
+
+# Meida codecs
+PRODUCT_COPY_FILES += \
+        device/samsung/corsica/configs/etc/media_codecs.xml:system/etc/media_codecs.xml \
+        device/samsung/corsica/configs/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -56,7 +61,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	SamsungServiceMode 
 	
-
 # Charger
 PRODUCT_PACKAGES += \
 	charger \
@@ -136,4 +140,3 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_corsica
 PRODUCT_DEVICE := corsica
-

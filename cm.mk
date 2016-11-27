@@ -8,7 +8,7 @@ PRODUCT_RELEASE_NAME := GalaxyPocketNeoDuos
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/corsica/device_corsica.mk)
+$(call inherit-product, device/samsung/corsica/device.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := corsica
