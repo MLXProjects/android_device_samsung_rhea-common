@@ -44,6 +44,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
         device/samsung/corsica/multisim/MultiSIM-Toggle.apk:system/app/MultiSIM-Toggle.apk
 
+# Stagefright
+PRODUCT_PROPERTY_OVERRIDES += \
+        media.stagefright.enable-player=true \
+        media.stagefright.enable-meta=false \
+        media.stagefright.enable-scan=true \
+        media.stagefright.enable-http=true \
+        media.stagefright.enable-fma2dp=true \
+        media.stagefright.enable-aac=true \
+        media.stagefright.enable-qcp=true
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
 	setup_fs
