@@ -33,9 +33,12 @@ PRODUCT_COPY_FILES += \
 
 # Meida codecs
 PRODUCT_COPY_FILES += \
+        device/samsung/corsica/configs/etc/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+        device/samsung/corsica/configs/etc/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+        device/samsung/corsica/configs/etc/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+        device/samsung/corsica/configs/etc/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
         device/samsung/corsica/configs/etc/media_codecs.xml:system/etc/media_codecs.xml \
         device/samsung/corsica/configs/etc/media_profiles.xml:system/etc/media_profiles.xml
-
 
 # Multisim-toggle app © Shubhang Rathore
 PRODUCT_COPY_FILES += \
