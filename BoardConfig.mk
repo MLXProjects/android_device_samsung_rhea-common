@@ -30,7 +30,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1002438656
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 2173120512
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_KERNEL_SOURCE := kernel/samsung/corsica
+TARGET_KERNEL_SOURCE := kernel/samsung/rhea
 TARGET_KERNEL_CONFIG := cyanogenmod_corsica_defconfig
 
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -40,7 +40,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/corsica/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/corsica/libbt_vndcfg.txt
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/corsica/bluetooth/libbt_vndcfg.txt
 
 # Connectivity - Wi-Fi
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
@@ -69,7 +69,11 @@ BOARD_USE_MHEAP_SCREENSHOT := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 BOARD_EGL_NEEDS_FNW := true
-COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DCAPRI_HWC -DEGL_NEEDS_FNW -DMR0_AUDIO_BLOB
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS 
+COMMON_GLOBAL_CFLAGS += -DRHEA_HWC -DEGL_NEEDS_FNW 
+
+# Audio
+COMMON_GLOBAL_CFLAGS += -DMR0_AUDIO_BLOB
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -79,7 +83,7 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charg
 BOARD_RIL_CLASS := ../../../device/samsung/corsica/ril/
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/corsica/fstab.rhea_ss_corsica
+TARGET_RECOVERY_FSTAB := device/samsung/corsica/rootdir/etc/fstab.rhea_ss_corsica
 BOARD_LDPI_RECOVERY := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := "<font_7x16.h>"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/corsica/recovery/recovery_keys.c
@@ -112,4 +116,4 @@ BOARD_SEPOLICY_UNION += \
 #TW_CUSTOM_POWER_BUTTON := 107
 #TW_INCLUDE_INJECTTWRP := true
 #TWRP_EVENT_LOGGING := false
-#PRODUCT_COPY_FILES += device/samsung/corsica/twrp.fstab:recovery/root/etc/twrp.fstab
+#PRODUCT_COPY_FILES += device/samsung/corsica/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
