@@ -31,8 +31,9 @@ PRODUCT_COPY_FILES += \
 	device/samsung/corsica/keylayouts/Generic.kl:system/usr/keylayout/Generic.kl \
 	device/samsung/corsica/keylayouts/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl
 
-# Meida codecs
+# Audio|Media codecs
 PRODUCT_COPY_FILES += \
+        device/samsung/corsica/configs/etc/audio_policy.conf:system/etc/audio_policy.conf \
         device/samsung/corsica/configs/etc/media_codecs.xml:system/etc/media_codecs.xml \
         device/samsung/corsica/configs/etc/media_profiles.xml:system/etc/media_profiles.xml
 
