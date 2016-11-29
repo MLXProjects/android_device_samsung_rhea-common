@@ -7,11 +7,6 @@ $(call inherit-product-if-exists, vendor/samsung/rhea-common/rhea-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/samsung/rhea-common/overlay
 
-# LDPI assets
-PRODUCT_AAPT_CONFIG := normal ldpi mdpi nodpi
-PRODUCT_AAPT_PREF_CONFIG := ldpi
-#$(call inherit-product, device/ldpi-common/ldpi.mk)
-
 # Init files
 PRODUCT_PACKAGES += \
     init.bcm2165x.usb.rc \
