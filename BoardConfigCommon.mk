@@ -23,6 +23,9 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/rhea-common/bluetooth
 
+# Enable dex-preoptimization to speed up first boot sequence
+WITH_DEXPREOPT := true
+
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/rhea
 BOARD_KERNEL_BASE := 0x82000000
