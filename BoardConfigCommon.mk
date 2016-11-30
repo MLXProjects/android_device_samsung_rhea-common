@@ -87,6 +87,9 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_stora
 # CMHW
 BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/rhea-common/cmhw/
 
+# Properties (reset them here, include more in device if needed)
+TARGET_SYSTEM_PROP := device/samsung/rhea-common/system.prop
+
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     device/samsung/rhea-common/sepolicy
