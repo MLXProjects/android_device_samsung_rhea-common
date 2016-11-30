@@ -66,6 +66,9 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudio-resampler
 
+PRODUCT_PACKAGES += \
+    lights.rhea
+
 # Wifi
 PRODUCT_PACKAGES += \
     dhcpcd.conf \
