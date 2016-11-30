@@ -81,6 +81,9 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+PRODUCT_PACKAGES += \
+    libnetcmdiface
+
 # Device-specific packages
 PRODUCT_PACKAGES += \
     SamsungServiceMode 
