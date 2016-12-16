@@ -17,8 +17,8 @@ PRODUCT_PACKAGES += \
      tinymix
 
 # Power
-PRODUCT_PACKAGES += \
-     power.rhea
+#PRODUCT_PACKAGES += \
+#     power.rhea
 
 # Init.d files
 PRODUCT_COPY_FILES += \
