@@ -47,16 +47,6 @@ BOARD_GLOBAL_CFLAGS += -DRHEA_HWC
 BOARD_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DREFBASE_JB_MR1_COMPAT_SYMBOLS
 BOARD_GLOBAL_CFLAGS += -DMR0_CAMERA_BLOB -DEGL_NEEDS_FNW -DMETADATA_CAMERA_SOURCE
 
-# Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),userdebug)
-  ifeq ($(WITH_DEXPREOPT),)
-WITH_DEXPREOPT := true
-  endif
- endif
-endif
-DONT_DEXPREOPT_PREBUILTS := true
-
 # Skip droiddoc build to save build time
 BOARD_SKIP_ANDROID_DOC_BUILD := true
 
