@@ -1,0 +1,7 @@
+# RILD
+service ril-daemon /system/bin/rild
+    class main
+    socket rild stream 660 root radio
+    socket rild1 stream 660 root radio
+    user root
+    group radio cache inet misc audio system log
