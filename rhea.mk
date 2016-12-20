@@ -76,10 +76,6 @@ PRODUCT_PACKAGES += \
     init.bcm2165x.usb.rc \
     init.bt.rc \
     init.log.rc
-
-# Data workaroud script
-PRODUCT_PACKAGES += \
-    ril_data.sh
  
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
