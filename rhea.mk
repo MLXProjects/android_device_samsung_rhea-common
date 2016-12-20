@@ -16,13 +16,12 @@ PRODUCT_PACKAGES += \
      libaudio-resampler
 
 # Power
-PRODUCT_PACKAGES += \
-     power.rhea
+#PRODUCT_PACKAGES += \
+#     power.rhea
 
 # Init.d files
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/init.d/69fstrim_crond:system/etc/init.d/69fstrim_crond \
-    $(COMMON_PATH)/init.d/swap:system/etc/init.d/swap
+    $(COMMON_PATH)/init.d/69fstrim_crond:system/etc/init.d/69fstrim_crond
 
 # Lights
 PRODUCT_PACKAGES += \
