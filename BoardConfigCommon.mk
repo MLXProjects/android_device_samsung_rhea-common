@@ -81,7 +81,6 @@ BOARD_KERNEL_PAGESIZE := 4096
 TARGET_KERNEL_SOURCE := kernel/samsung/rhea
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7/bin
 KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
-KERNEL_HAS_FINIT_MODULE := false
 
 # File System
 TARGET_USERIMAGES_USE_EXT4 := true
