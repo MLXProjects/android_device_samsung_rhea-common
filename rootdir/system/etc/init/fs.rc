@@ -1,0 +1,8 @@
+# create filesystem if necessary
+service setup_fs /system/bin/setup_fs \
+            /dev/block/mmcblk0p3 \
+            /dev/block/mmcblk0p4
+    class core
+    user root
+    group root
+    oneshot

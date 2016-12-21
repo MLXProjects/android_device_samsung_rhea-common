@@ -1,0 +1,6 @@
+# Service for our shell scripts
+
+# GSM/HSDPA data workaround
+service data_workaround /system/bin/sh /ril_data.sh
+    user root
+    disabled

@@ -1,0 +1,6 @@
+# Run bkmgrd automatically on startup
+service bkmgrd /system/bin/bkmgrd
+    class main
+    oneshot
+    user root
+    group radio system log

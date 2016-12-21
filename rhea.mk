@@ -90,6 +90,19 @@ PRODUCT_PACKAGES += \
     init.log.rc \
     rild.rc
 
+# System init fragments
+SYSTEM_INIT_RC_FILES := \
+    $(COMMON_PATH)/rootdir/system/etc/init/at.rc \
+    $(COMMON_PATH)/rootdir/system/etc/init/bkmgrd.rc \
+    $(COMMON_PATH)/rootdir/system/etc/init/custom.rc \
+    $(COMMON_PATH)/rootdir/system/etc/init/fs.rc \
+    $(COMMON_PATH)/rootdir/system/etc/init/gpsd.rc \
+    $(COMMON_PATH)/rootdir/system/etc/init/rild.rc \
+    $(COMMON_PATH)/rootdir/system/etc/init/wifi.rc
+
+PRODUCT_COPY_FILES += \
+    $(foreach f,$(SYSTEM_INIT_RC_FILES),$(f):system/etc/init/$(notdir $(f)))
+
 # Data workaroud script
 PRODUCT_PACKAGES += \
     ril_data.sh

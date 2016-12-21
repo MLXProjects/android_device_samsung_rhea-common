@@ -1,0 +1,14 @@
+# at_distributor for making concerned about factory.
+service at_distributor /system/bin/at_distributor
+    class main
+    user root
+    group root
+    oneshot
+
+# Run ATX over UART
+service console /system/bin/atx -l -d
+    class main
+    console
+    oneshot
+    user system
+    group vpn net_admin net_raw radio system sdcard_rw log mount
