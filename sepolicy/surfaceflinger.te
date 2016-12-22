@@ -1,1 +1,3 @@
 allow surfaceflinger tvserver:binder { transfer call };
+allow surfaceflinger self:process execmem;
+allow surfaceflinger system_file:file execmod;
