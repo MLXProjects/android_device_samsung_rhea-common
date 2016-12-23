@@ -123,9 +123,6 @@ BOARD_EGL_NEEDS_FNW := true
 BOARD_USES_LEGACY_ACQUIRE_WVM := true
 OVERRIDE_RS_DRIVER := libRSDriverArm_rhea.so
 
-# Legacy blobs
-USE_LEGACY_BLOBS= true
-
 # H/W acceleration 
 ENABLE_WEBGL := true
 WITH_JIT := true
