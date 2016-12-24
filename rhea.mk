@@ -1,5 +1,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+# Detect TWRP to use proper fstab
+ifneq ($(strip $(wildcard $(TOP)/bootable/recovery/twrp.cpp)),)
+BUILD_TWRP := true
+endif
+
 DEVICE_PACKAGE_OVERLAYS += device/samsung/rhea-common/overlay
 
 COMMON_PATH := device/samsung/rhea-common
