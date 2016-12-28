@@ -20,7 +20,7 @@ LOCAL_SRC_FILES := \
     Fence.cpp \
     GraphicBufferMapper.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder libui
+LOCAL_SHARED_LIBRARIES := libbinder libgui libui
 
 LOCAL_MODULE := libsamsung_symbols
 LOCAL_MODULE_TAGS := optional
