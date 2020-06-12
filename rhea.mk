@@ -11,7 +11,6 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/rhea-common/overlay
 PRODUCT_PACKAGES += \
     init.bcm2165x.usb.rc \
     init.log.rc \
-    init.bt.rc \
     lpm.rc
 
 # Init.d files

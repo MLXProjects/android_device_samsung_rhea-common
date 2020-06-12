@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-ifneq ($(filter corsica nevisp ivoryss,$(TARGET_DEVICE)),)
+ifneq ($(filter coriplus nevisp ivoryss,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 include $(call all-makefiles-under,$(LOCAL_PATH))
