@@ -1,2 +1,0 @@
-allow bootanim rootfs:lnk_file getattr;
-allow bootanim system_file:file execmod;

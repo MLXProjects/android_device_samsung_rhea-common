@@ -22,8 +22,9 @@ ARCH_ARM_HAVE_VFP := true
 ARCH_ARM_HAVE_NEON := true
 TARGET_ARCH_LOWMEM := true
 
-TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfloat-abi=softfp
+# those aren't supported anymore
+# TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfloat-abi=softfp
+# TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfloat-abi=softfp
 
 # Assertions
 TARGET_BOARD_INFO_FILE := device/samsung/rhea-common/board-info.txt
@@ -77,11 +78,11 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
-
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 TARGET_KERNEL_SOURCE := kernel/samsung/rhea
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7/bin
 KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
-
+BOARD_KERNEL_IMAGE_NAME := zImage
 # File System
 TARGET_USERIMAGES_USE_EXT4 := true
 #TARGET_USERIMAGES_USE_F2FS := true
@@ -154,13 +155,9 @@ BOARD_MTP_DEVICE := /dev/mtp_usb
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.rhea
 WITH_CM_CHARGER := false
 
-# CMHW
-BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ $(COMMON_PATH)/cmhw/
+# LineageHW
+BOARD_HARDWARE_CLASS := hardware/samsung/lineagehw/ $(COMMON_PATH)/lineagehw/
 
 # ART
 # jemalloc causes a lot of random crash on free()
 MALLOC_SVELTE := true
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    $(COMMON_PATH)/sepolicy

@@ -1,2 +1,0 @@
-allow audioserver rootfs:lnk_file { getattr };
-allow audioserver init:unix_stream_socket { connectto };

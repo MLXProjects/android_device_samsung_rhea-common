@@ -85,8 +85,8 @@ PRODUCT_PACKAGES += \
 
 # Glgps-Compat|samsung_symbols
 PRODUCT_PACKAGES += \
-    libglgps-compat \
     libsamsung_symbols 
+#    libglgps-compat \
 
 # Init scripts
 PRODUCT_PACKAGES += \
@@ -190,9 +190,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.checkjni=false
 
 # ADB
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.secure=0 \
-    ro.adb.secure=0 \
+#ADDITIONAL_DEFAULT_PROPERTIES += \
+#    ro.secure=0 \
+#    ro.adb.secure=0 \
 
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
