@@ -1,8 +1,9 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Detect TWRP to use proper fstab
-ifneq ($(strip $(wildcard $(TOP)/bootable/recovery/twrp.cpp)),)
+ifneq ($(strip $(wildcard $(TOP)/bootable/recovery-twrp/twrp.cpp)),)
 BUILD_TWRP := true
+RECOVERY_VARIANT := twrp
 endif
 
 DEVICE_PACKAGE_OVERLAYS += device/samsung/rhea-common/overlay
@@ -11,7 +12,7 @@ COMMON_PATH := device/samsung/rhea-common
 
 $(call inherit-product-if-exists, vendor/samsung/rhea-common/rhea-common-vendor.mk)
 
-# Audio 
+# Audio
 USE_CUSTOM_AUDIO_POLICY := 1
 
 PRODUCT_PACKAGES += \
@@ -39,7 +40,7 @@ PRODUCT_PACKAGES += \
 
 # Device-specific packages
 PRODUCT_PACKAGES += \
-     SamsungServiceMode 
+     SamsungServiceMode
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -85,7 +86,7 @@ PRODUCT_PACKAGES += \
 
 # Glgps-Compat|samsung_symbols
 PRODUCT_PACKAGES += \
-    libsamsung_symbols 
+    libsamsung_symbols
 #    libglgps-compat \
 
 # Init scripts
@@ -111,14 +112,14 @@ PRODUCT_COPY_FILES += \
 # Data workaroud script
 PRODUCT_PACKAGES += \
     ril_data.sh
- 
+
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
     $(COMMON_PATH)/configs/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(COMMON_PATH)/configs/etc/media_profiles.xml:system/etc/media_profiles.xml \
-    $(COMMON_PATH)/configs/etc/audio_policy.conf:system/etc/audio_policy.conf 
+    $(COMMON_PATH)/configs/etc/audio_policy.conf:system/etc/audio_policy.conf
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
@@ -128,7 +129,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(COMMON_PATH)/keylayout/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl \
     $(COMMON_PATH)/keylayout/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl \
-    $(COMMON_PATH)/keylayout/Generic.kl:system/usr/keylayout/Generic.kl 
+    $(COMMON_PATH)/keylayout/Generic.kl:system/usr/keylayout/Generic.kl
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -174,7 +175,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.force_highendgfx=true \
     camera2.portability.force_api=1 \
     ro.setupwizard.mode=OPTIONAL
-    
+
 # enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -182,7 +183,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.networklocation=1
 
 # Extended JNI checks
-# The extended JNI checks will cause the system to run more slowly, but they can spot a variety of nasty bugs 
+# The extended JNI checks will cause the system to run more slowly, but they can spot a variety of nasty bugs
 # before they have a chance to cause problems.
 # Default=true for development builds, set by android buildsystem.
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -199,7 +200,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-filter=interpret-only \
     dalvik.vm.dex2oat-flags=--no-watch-dog \
     dalvik.vm.image-dex2oat-filter=speed
-    
+
 # MTP
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
